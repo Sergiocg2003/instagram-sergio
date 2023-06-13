@@ -21,8 +21,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
+        'nick',
         'email',
         'password',
+        'image'
     ];
 
     /**
@@ -45,15 +48,15 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function images(): HasMany {
+    public function image(): HasMany {
         return $this->hasMany(Image::class);
     }
 
-    public function comments(): HasMany {
+    public function comment(): HasMany {
         return $this->hasMany(Comment::class);
     }
 
-    public function likes(): HasMany {
+    public function like(): HasMany {
         return $this->hasMany(Like::class);
     }
 }
