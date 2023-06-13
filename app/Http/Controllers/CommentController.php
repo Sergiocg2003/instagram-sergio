@@ -20,7 +20,10 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        $comment = new Comment();
+        $content = __("Contenido");
+        $action = route("comments.store");
+        return view("comments.form", compact("comment", "content", "action"));
     }
 
     /**
@@ -28,7 +31,14 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Comment::create([
+            'user_id' => $request->user_id,
+            'image_id' => $request->image_id,
+            'content' => $request->content,
+            'created_at' => now(),
+        ]);
+        session()->flash("success", __("El comentario se ha publicado correctamente"));
+        return redirect(route("images.index"));
     }
 
     /**
@@ -60,6 +70,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        session()->flash("success", __("El comentario ha sido eliminado correctamente"));
+        return redirect(route("images.index"));
     }
 }

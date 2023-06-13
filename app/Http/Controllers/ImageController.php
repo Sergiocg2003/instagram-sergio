@@ -52,7 +52,7 @@ class ImageController extends Controller
      */
     public function show(Image $image)
     {
-        $image = Image::with("user")->withCount("like","comment")->where('id', $image->id)->first();
+        $image = Image::with("user", "comment")->withCount("like","comment")->where('id', $image->id)->first();
         return view("images.show", compact("image"));
     }
 
@@ -63,7 +63,7 @@ class ImageController extends Controller
     {
         $description = __("Descripcion");
         $action = route("images.update", ["image" => $image]);
-        return view("images.edit", compact("image", "description", "action"));
+        return view("images.edit", compact("image","description", "action"));
     }
 
     /**
