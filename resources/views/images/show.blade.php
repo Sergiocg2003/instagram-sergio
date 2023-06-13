@@ -19,7 +19,6 @@
             <form method="POST" action="{{ route('comments.store') }}" style="display:flex; flex-direction:column;  align-items:center;" class="mt-4">
                 @csrf
                 <label for="description" style="width:100%; text-align:center; color:white;">NUEVO COMENTARIO:</label>
-                <input type="hidden" name="user_id" value="{{ $image->user->id }}">
                 <input type="hidden" name="image_id" value="{{ $image->id }}">
                 <textarea style="color:black; width: 100%" id="story" name="content" rows="5" placeholder="Escribe aqui tu comentario" class="bg-white border rounded-sm max-w-md" required></textarea>
                 <x-input-error :messages="$errors->get('description')" class="mt-2" />

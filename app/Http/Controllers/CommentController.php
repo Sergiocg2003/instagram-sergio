@@ -31,8 +31,9 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id = $request->user()->id;
         Comment::create([
-            'user_id' => $request->user_id,
+            'user_id' => $user_id,
             'image_id' => $request->image_id,
             'content' => $request->content,
             'created_at' => now(),
