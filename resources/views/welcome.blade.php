@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <h1 class="font-semibold text-xl text-white leading-tight">Instagram con laravel</h1>
+                    <h1 style="color: white; font-weight:bold; font-size: x-large;">{{ __('Instagram con laravel') }}</h1>
                 </div>
             </div>
         </div>
