@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <h1 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Instagram con laravel</h1>
+                    <h1 class="font-semibold text-xl text-white leading-tight">Instagram con laravel</h1>
                 </div>
             </div>
         </div>
